@@ -5,7 +5,7 @@
  * Nota: suponer que todos los mensajes están escritos en mayúscula sin tilde y que el alfabeto consta de 128 símbolos.
  * */
 package es.studium.EscribirFicheros;
-
+//Importamos los paquetes necesarios ctl+mayus+o
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,13 +13,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Ejercicio02_CifrarDecifrar {
-
+	//Creamos la clase Main
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		cipher(".\\src\\es\\studium\\EscribirFicheros\\prueba.txt",1);
 		decipher(".\\src\\es\\studium\\EscribirFicheros\\CIF_prueba.txt",1);
 	}
 	public static void cipher(String fileName, int offset) {
+		//Creamos la clase file y la iniciamos con la ruta y nombre del fichero.
 		File originalFile = new File(fileName);
 		File cipheredFile = new File(originalFile.getParent(), "CIF_" + originalFile.getName());
 		try {

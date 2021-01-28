@@ -35,7 +35,13 @@ public class Ejercicio04_ContarPalabrasStream {
 				long counter = bufferedReader.lines().flatMap(line -> Arrays.stream(line.split("[\\s,\\.]")))
 						.filter(w -> w.equals(word)).count();
 				//Nos muestra por pantalla la cantidad de veces que aparece la palabra
-				System.out.println("En el fichero aparece " + counter + " veces la palabra " + word);
+				if(counter==1)
+				{
+					System.out.println("En el fichero aparece " + counter + " vez la palabra " + word);
+				}
+				else {
+					System.out.println("En el fichero aparece " + counter + " veces la palabra " + word);
+				}
 				//cerramos el bufferedReader del dichero
 				bufferedReader.close();
 				//Creamos la excepcion imprimiendo el mensaje de error de apertura del fichero

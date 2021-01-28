@@ -21,6 +21,9 @@ public class Ejercicio02_MostarElementosDirectorioOrdenado_Streams {
 	}
 	public static void dir(String pathname) {
 		File[] files = (new File(pathname)).listFiles();
+		//La linea anterior es lo mismo que las 2 siguientes:
+		//File filePathname = new File(pathname);
+		//File[] files = filePathname.listFiles();
 		System.out.println(" Contenido de la carpeta " + pathname + "\n");
 		Arrays.stream(files).filter(file -> file.isDirectory())
 				.forEach(file -> System.out.println("<DIR>\t" + file.getName()));
